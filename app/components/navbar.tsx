@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import logo from "../images/nav_logo.png";
 import styles from '../styles/navbar.module.css';
 
 interface DropdownItem {
@@ -18,14 +20,11 @@ interface NavLink {
 // reverse this so home always go last for some fucky css reason
 const links: NavLink[] = [
     { label: "Home", href: "/"},
-    {
-        label: "About",
-        dropdown: [
-            {label: "Me", href: "/about/me"},
-            {label: "Projects", href: "/about/projects"}
-        ],
-    },
-].reverse();
+    { label: "About", href: "#"},
+    { label: "Projects", href: "#" },
+    { label: "Connections", href: "#"},
+    { label: "Contact Me", href: "#"},
+];
 
 export default function Navbar() {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -49,7 +48,11 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav} ref={navRef}>
-      <span className={styles.logo}><a href="/">Crismon Rowell</a></span>
+        <span className={styles.logo}>
+            <a href="/">
+                <Image className={styles.logoImage} src={logo} alt="Crismon Rowell"></Image>
+            </a>
+      </span>
 
       <ul className={styles.links}>
         {links.map((link) => (

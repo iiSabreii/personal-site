@@ -3,7 +3,8 @@
 
 :root {
   --color-background: silver;
-  --color-text: black;
+
+  --color-text: white;
   --color-link: blue;
   --color-link-visited: purple;
 
@@ -25,7 +26,7 @@ body {
   font-size: 1.25rem;
   line-height: 1.5;
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-image: url('../public/galaxy.gif');
 }
 
 .content {

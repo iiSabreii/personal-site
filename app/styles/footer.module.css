@@ -1,0 +1,32 @@
+:root {
+  --color-background: silver;
+  --color-text: white;
+  --color-text-hover: rgb(255, 35, 35);
+  --color-link: blue;
+  --color-link-visited: purple;
+
+  --font-family-pixel: 'VT323', monospace;
+
+  --body-width: 3px;
+  --border-style-outset: var(--border-width) outset;
+  --border-style-inset: var(--border-width) inset;
+}
+
+a:visited {
+    color: var(--color-text);
+}
+
+.nav {
+    display: flex;
+    font-size: 2rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    background-color: inherit;
+    position: relative;
+}
+
+.solarEasterEgg {
+    justify-content: left;
+}

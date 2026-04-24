@@ -17,7 +17,6 @@ interface NavLink {
     dropdown?: DropdownItem[];
 }
 
-// reverse this so home always go last for some fucky css reason
 const links: NavLink[] = [
     { label: "Home", href: "/"},
     { label: "About", href: "#"},
@@ -47,60 +46,62 @@ export default function Navbar() {
     };
 
   return (
-    <nav className={styles.nav} ref={navRef}>
-        <span className={styles.logo}>
-            <a href="/">
-                <Image className={styles.logoImage} src={logo} alt="Crismon Rowell"></Image>
-            </a>
-      </span>
+    <header>
+        <nav className={styles.nav} ref={navRef}>
+            <span className={styles.logo}>
+                <a href="/">
+                    <Image className={styles.logoImage} src={logo} alt="Crismon Rowell"></Image>
+                </a>
+            </span>
 
-      <ul className={styles.links}>
-        {links.map((link) => (
-          <li key={link.label} className={styles.navItem}>
+        <ul className={styles.links}>
+            {links.map((link) => (
+            <li key={link.label} className={styles.navItem}>
 
-            {/* Regular link */}
-            {link.href && !link.dropdown && (
-              <Link href={link.href} className={styles.navLink}>
-                {link.label}
-              </Link>
-            )}
-
-            {/* Dropdown trigger */}
-            {link.dropdown && (
-              <>
-                <button
-                  className={styles.dropdownTrigger}
-                  onClick={() => toggleDropdown(link.label)}
-                  aria-expanded={openDropdown === link.label}
-                >
-                  {link.label}
-                  <span className={styles.arrow}>
-                    {openDropdown === link.label ? "▲" : "▼"}
-                  </span>
-                </button>
-
-                {/* Dropdown list */}
-                {openDropdown === link.label && (
-                  <ul className={styles.dropdown}>
-                    {link.dropdown.map((item) => (
-                      <li key={item.href}>
-                        <Link
-                          href={item.href}
-                          className={styles.dropdownLink}
-                          onClick={() => setOpenDropdown(null)}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Regular link */}
+                {link.href && !link.dropdown && (
+                <Link href={link.href} className={styles.navLink}>
+                    {link.label}
+                </Link>
                 )}
-              </>
-            )}
 
-          </li>
-        ))}
-      </ul>
-    </nav>
+                {/* Dropdown trigger */}
+                {link.dropdown && (
+                <>
+                    <button
+                    className={styles.dropdownTrigger}
+                    onClick={() => toggleDropdown(link.label)}
+                    aria-expanded={openDropdown === link.label}
+                    >
+                    {link.label}
+                    <span className={styles.arrow}>
+                        {openDropdown === link.label ? "▲" : "▼"}
+                    </span>
+                    </button>
+
+                    {/* Dropdown list */}
+                    {openDropdown === link.label && (
+                    <ul className={styles.dropdown}>
+                        {link.dropdown.map((item) => (
+                        <li key={item.href}>
+                            <Link
+                            href={item.href}
+                            className={styles.dropdownLink}
+                            onClick={() => setOpenDropdown(null)}
+                            >
+                            {item.label}
+                            </Link>
+                        </li>
+                        ))}
+                    </ul>
+                    )}
+                </>
+                )}
+
+            </li>
+            ))}
+        </ul>
+        </nav>
+    </header>
   )
 }

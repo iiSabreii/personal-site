@@ -12,6 +12,19 @@
   --border-style-inset: var(--border-width) inset;
 }
 
+.footer {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    
+    bottom: 0;
+    width: 100%;
+
+    height: auto;
+    padding: 1rem 1rem;
+
+}
+
 a:visited {
     color: var(--color-text);
 }
@@ -28,5 +41,21 @@ a:visited {
 }
 
 .solarEasterEgg {
-    justify-content: left;
+    animation: spin 2s linear infinite;
+
+    width: 40px;
+    height: 40px;
+
+}
+
+.rocket {
+    
+    width: 40px;
+    height: 40px;
+    rotate: -45deg;
+}
+
+@keyframes spin {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
 }

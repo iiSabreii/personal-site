@@ -15,6 +15,10 @@
   --border-style-inset: var(--border-width) inset;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

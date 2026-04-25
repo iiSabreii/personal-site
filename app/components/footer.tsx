@@ -18,7 +18,7 @@ const links: FooterItemLink[] = [
 export default function Footer() {
     return (
         <footer className={styles.footer}>
-            <div className={styles.solarEasterEgg}>
+            <div className={styles.solarIcon}>
                 <a href="#">
                     <Image src={solarSystem} alt="Just a solar system, Nothing to see here" />
                 </a>

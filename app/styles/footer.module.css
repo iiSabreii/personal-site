@@ -31,16 +31,17 @@ a:visited {
 
 .nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
     font-size: 2rem;
     font-weight: bold;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem 1rem;
     background-color: inherit;
-    position: relative;
 }
 
-.solarEasterEgg {
+.solarIcon {
     animation: spin 2s linear infinite;
 
     width: 40px;
@@ -49,13 +50,26 @@ a:visited {
 }
 
 .rocket {
-    
-    width: 40px;
-    height: 40px;
-    rotate: -45deg;
+    position: relative;
+    left: 50%;    
+
+    width: 30px;
+    height: 60px;
+
+
+    padding-bottom: 0.5rem;
+    transition: transform 5s ease;
 }
 
+.rocket:hover {
+    animation: rocketSpin 3s linear infinite;
+}
 @keyframes spin {
+    from { rotate: 0deg; }
+    to { rotate: 360deg; }
+}
+
+@keyframes rocketSpin {
     from { rotate: 0deg; }
     to { rotate: 360deg; }
 }

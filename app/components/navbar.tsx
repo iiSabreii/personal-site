@@ -52,9 +52,9 @@ export default function Navbar() {
 		<header>
 			<nav className={styles.nav} ref={navRef}>
 				<span className={styles.logo}>
-					<a href='/'>
+					<Link href='/'>
 						<Image className={styles.logoImage} src={logo} alt='Crismon Rowell'></Image>
-					</a>
+					</Link>
 				</span>
 
 				<ul className={styles.links}>

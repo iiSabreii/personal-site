@@ -15,14 +15,13 @@
 .footer {
     position: absolute;
     display: flex;
-    align-items: center;
+    justify-content: left;
     
     bottom: 0;
     width: 100%;
 
     height: auto;
-    padding: 1rem 1rem;
-
+    padding: 1rem;
 }
 
 a:visited {
@@ -51,19 +50,18 @@ a:visited {
 
 .rocket {
     position: relative;
-    left: 50%;    
-
-    width: 30px;
-    height: 60px;
-
+    left: 45%;    
 
     padding-bottom: 0.5rem;
-    transition: transform 5s ease;
+    width: 40px;
+    height: 60px;
+
 }
 
 .rocket:hover {
     animation: rocketSpin 3s linear infinite;
 }
+
 @keyframes spin {
     from { rotate: 0deg; }
     to { rotate: 360deg; }

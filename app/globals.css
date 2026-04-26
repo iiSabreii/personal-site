@@ -30,7 +30,9 @@ body {
   font-size: 1.25rem;
   line-height: 1.5;
   color: var(--color-text);
-  background-image: url('../public/galaxy.gif');
+  
+  background-image: url('./images//windowsxpbackground.png');
+  background-size: cover;
 }
 
 .content {
